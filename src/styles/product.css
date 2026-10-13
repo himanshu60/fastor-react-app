@@ -1,0 +1,161 @@
+/* ---------- Product detail ---------- */
+.product {
+  padding: 42px 26px calc(44px + env(safe-area-inset-bottom));
+}
+
+.product-hero {
+  position: relative;
+  aspect-ratio: 334 / 231;
+  overflow: hidden;
+  border-radius: 29px;
+  background: #eee;
+}
+
+.product-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Small back button over the photo (the design has no back control) */
+.product-back {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  color: var(--brown);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--orange-soft);
+  border-bottom: 1px solid var(--orange-soft);
+}
+
+.product-price {
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stepper button {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--orange);
+}
+
+.stepper button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stepper-count {
+  min-width: 16px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.product-name {
+  margin-top: 14px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.product-description {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.options {
+  margin: 40px 0 0;
+  padding: 0;
+  border: none;
+}
+
+.options legend {
+  padding: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 0;
+  font-size: 13.5px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.option:first-of-type {
+  margin-top: 10px;
+}
+
+/* Dotted leader between the label and the price */
+.option-leader {
+  flex: 1;
+  height: 1px;
+  margin: 0 4px;
+  border-bottom: 1px dotted #f4b9a3;
+}
+
+.option-price {
+  margin-right: 10px;
+}
+
+/* Custom radio: double ring, filled dot when selected */
+.option input {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  border: 1.5px solid var(--orange);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.option input::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--orange);
+  border-radius: 50%;
+}
+
+.option input:checked::after {
+  border: none;
+  background: var(--orange);
+}
+
+.product-footer {
+  margin: auto -5px 0;
+  padding-top: 32px;
+}

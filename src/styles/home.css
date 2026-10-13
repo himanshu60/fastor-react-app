@@ -1,0 +1,334 @@
+/* ---------- Home ---------- */
+.home {
+  padding-bottom: 28px;
+}
+
+.location-bar {
+  padding: 10px 22px 12px;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.location-label {
+  font-size: 12px;
+  color: #a9a9a9;
+}
+
+.location-name {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.home-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px 0;
+}
+
+.user-box {
+  flex: 0 1 180px;
+  padding: 16px 14px;
+  border-radius: 16px;
+  font-size: 18px;
+  color: #808080;
+  background: #fafafa;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.icon-button:first-of-type {
+  margin-left: auto;
+}
+
+.icon-button.call {
+  background: linear-gradient(135deg, #ff9a76, #f86b4a);
+}
+
+.icon-button.wallet {
+  background: linear-gradient(135deg, #7ccbf0, #4c74d9);
+}
+
+.section-title {
+  padding: 0 28px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+/* Best seller row */
+.best-seller {
+  margin-top: 42px;
+}
+
+.best-seller-list {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 0 28px 4px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.best-seller-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* 74px wide as in the design, growing to fill wider phones */
+.best-seller-card {
+  position: relative;
+  flex: 1 0 74px;
+  height: 111px;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  scroll-snap-align: start;
+}
+
+.best-seller-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s;
+}
+
+.best-seller-card:hover img {
+  transform: scale(1.06);
+}
+
+.price-tag {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  padding: 2px 5px 1px 7px;
+  border-radius: 10px 0 0 10px;
+  font-size: 12px;
+  color: #fff;
+  background: var(--orange);
+}
+
+/* Promo banner carousel */
+.promo {
+  margin-top: 18px;
+  padding: 0 28px;
+}
+
+.promo-track {
+  display: flex;
+  overflow-x: auto;
+  border-radius: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.promo-track::-webkit-scrollbar {
+  display: none;
+}
+
+.promo-slide {
+  position: relative;
+  display: grid;
+  flex: 0 0 100%;
+  grid-template-columns: 47% 53%;
+  height: 132px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--orange);
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.promo-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.promo-tagline {
+  font-size: 14px;
+  max-width: 120px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.promo-discount {
+  margin-top: 8px;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.promo-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Decorative yellow rings from the design */
+.promo-slide::before,
+.promo-slide::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  border: 5px solid var(--yellow);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.promo-slide::before {
+  top: -26px;
+  left: calc(47% - 32px);
+  width: 50px;
+  height: 50px;
+}
+
+.promo-slide::after {
+  bottom: -18px;
+  left: -16px;
+  width: 36px;
+  height: 36px;
+}
+
+.promo-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.promo-dot {
+  width: 20px;
+  height: 4px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: var(--yellow-soft);
+  transition: background 0.2s;
+}
+
+.promo-dot.active {
+  background: var(--orange);
+}
+
+/* Popular items (orders) */
+.popular {
+  margin-top: 50px;
+}
+
+.popular-list {
+  margin: 14px 0 0;
+  padding: 0 28px;
+  list-style: none;
+}
+
+.order {
+  display: flex;
+  gap: 13px;
+  padding: 16px 0 18px;
+  border-bottom: 1px solid var(--orange-line);
+}
+
+.order:last-child {
+  border-bottom: none;
+}
+
+.order-image {
+  flex: 0 0 75px;
+  height: 110px;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+}
+
+.order-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.order-name {
+  padding: 0;
+  border: none;
+  font-size: 19px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--brown);
+  background: none;
+}
+
+.order-price {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+.order-meta {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.order-actions {
+  margin-top: 8px;
+}
+
+.pill {
+  height: 27px;
+  padding: 2px 16px 0;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.pill-filled {
+  color: #fff;
+  background: var(--orange);
+}
+
+.pill-soft {
+  color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.pill:disabled {
+  cursor: default;
+  opacity: 0.6;
+}

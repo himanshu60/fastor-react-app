@@ -1,0 +1,172 @@
+/* ---------- Design tokens (sampled from the Figma file) ---------- */
+:root {
+  /* Sign up / OTP screens */
+  --auth-font: 'Urbanist', system-ui, sans-serif;
+  --auth-text: #1e232c;
+  --auth-muted: #8391a1;
+  --auth-orange: #ff5701;
+  --input-bg: #f5f5f5;
+  --input-border: #eaeaea;
+  --keypad-bg: #dddfe4;
+
+  /* Home / product screens */
+  --app-font: 'League Spartan', system-ui, sans-serif;
+  --brown: #391713;
+  --orange: #e95322;
+  --orange-soft: #ffdecf;
+  --orange-line: #ffebe3;
+  --yellow: #f5cb58;
+  --yellow-soft: #f3e9b5;
+  --gray-line: #e9e9e9;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: var(--app-font);
+  color: var(--brown);
+  background: #f2f2f2;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* The app is a phone-width column; on desktop it is centered like a device */
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+@media (min-width: 520px) {
+  .app {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.screen {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* ---------- Buttons ---------- */
+.btn-orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--auth-orange);
+  transition: filter 0.15s;
+}
+
+.btn-orange:hover {
+  filter: brightness(1.05);
+}
+
+.btn-orange:active {
+  filter: brightness(0.95);
+}
+
+.back-button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: -8px;
+  border: none;
+  border-radius: 50%;
+  color: #fb7632;
+  background: none;
+}
+
+.back-button:hover {
+  background: #fff3ec;
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  max-width: min(390px, calc(100% - 32px));
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  color: #fff;
+  background: var(--brown);
+  box-shadow: 0 12px 30px rgba(57, 23, 19, 0.3);
+  transform: translateX(-50%);
+  animation: toast-in 0.2s ease-out;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

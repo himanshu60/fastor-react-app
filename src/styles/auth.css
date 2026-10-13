@@ -1,0 +1,223 @@
+/* ---------- Sign up + OTP screens ---------- */
+.auth-screen {
+  font-family: var(--auth-font);
+  color: var(--auth-text);
+}
+
+.auth-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px 22px 18px;
+}
+
+.auth-title {
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.auth-subtitle {
+  margin-top: 10px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--auth-muted);
+}
+
+.auth-subtitle strong {
+  display: block;
+  font-weight: 700;
+  color: var(--auth-text);
+}
+
+.auth-actions {
+  display: grid;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.field-error {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #d92d20;
+}
+
+/* Phone number field */
+.phone-field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  margin-top: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  cursor: text;
+}
+
+.dial-code {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.phone-field input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: transparent;
+  caret-color: var(--auth-orange);
+}
+
+.phone-field input::placeholder {
+  font-weight: 500;
+  color: #c4c8cf;
+}
+
+.terms {
+  font-size: 11px;
+  text-align: center;
+  color: var(--auth-muted);
+}
+
+.terms a {
+  font-weight: 600;
+  color: var(--auth-text);
+  text-decoration: none;
+}
+
+/* OTP boxes */
+.otp-boxes {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 36px;
+  cursor: text;
+}
+
+.otp-box {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 50px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.otp-box.active {
+  border-color: #ffcfb8;
+}
+
+.otp-separator {
+  width: 10px;
+  margin: 0 6px;
+  text-align: center;
+  color: var(--auth-muted);
+}
+
+/* Blinking caret drawn inside the active box */
+.otp-caret {
+  width: 1.5px;
+  height: 18px;
+  background: var(--auth-orange);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* The real input sits invisibly on top of the boxes so typing and paste work */
+.otp-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: transparent;
+  background: transparent;
+  caret-color: transparent;
+  opacity: 0;
+}
+
+.resend-row {
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.resend-row .timer {
+  font-weight: 500;
+  color: var(--auth-orange);
+}
+
+.resend-button {
+  padding: 0;
+  border: none;
+  font-weight: 600;
+  color: var(--auth-orange);
+  background: none;
+  text-decoration: underline;
+}
+
+/* ---------- iOS-style number keypad ---------- */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 6px;
+  padding: 6px 6px max(50px, calc(env(safe-area-inset-bottom) + 16px));
+  background: var(--keypad-bg);
+  user-select: none;
+}
+
+.key {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #000;
+  background: #fff;
+  box-shadow: 0 1px 0 #898a8d;
+  touch-action: manipulation;
+}
+
+.key:active {
+  background: #bcc0c7;
+}
+
+.key-digit {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.key-letters {
+  margin-top: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.key-delete {
+  background: transparent;
+  box-shadow: none;
+}
+
+.key-delete:active {
+  background: #bcc0c7;
+}
