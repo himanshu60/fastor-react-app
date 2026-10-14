@@ -16,6 +16,10 @@ Sign up with a mobile number, verify a 6-digit OTP, browse dishes and offers, an
 <img src="https://img.shields.io/badge/CSS-plain-1572B6?logo=css&logoColor=white" alt="Plain CSS" />
 </p>
 
+<p>
+<a href="https://mobile-app-design.netlify.app/"><img src="https://img.shields.io/badge/Live%20demo-mobile--app--design.netlify.app-00C7B7?logo=netlify&logoColor=white" alt="Live demo" /></a>
+</p>
+
 </div>
 
 <table>
@@ -38,7 +42,9 @@ Sign up with a mobile number, verify a 6-digit OTP, browse dishes and offers, an
 
 ## 🚀 Getting started
 
-**Prerequisites:** Node.js 20+
+**Try it online:** [mobile-app-design.netlify.app](https://mobile-app-design.netlify.app/). Open it on a phone, or use your browser's device mode.
+
+**Run it locally.** Prerequisites: Node.js 20+
 
 ```bash
 git clone https://github.com/himanshu60/fastor-react-app.git
